@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// 🔥 Environment Variables
+// Environment Variables
 const TRANZUPI_TOKEN = process.env.TRANZUPI_TOKEN;
 const TRANZUPI_WEBHOOK_SECRET = process.env.TRANZUPI_WEBHOOK_SECRET;
 const APP_URL = process.env.APP_URL;
@@ -20,7 +20,7 @@ if (!TRANZUPI_TOKEN || !TRANZUPI_WEBHOOK_SECRET || !APP_URL) {
   process.exit(1);
 }
 
-// 🔥 FIREBASE ADMIN SETUP
+// FIREBASE ADMIN SETUP
 try {
   const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
   admin.initializeApp({
